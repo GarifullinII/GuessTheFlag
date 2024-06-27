@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+struct CapsuleImage: View {
+    var name: String
+    
+    var body: some View {
+        Image(name)
+            .shadow(radius: 20)
+    }
+}
+
 struct ContentView: View {
     @State private var countries = [
         "Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Spain", "UK", "Ukraine", "US"
@@ -44,8 +53,7 @@ struct ContentView: View {
                         Button {
                             flagTapped(number)
                         } label: {
-                            Image(countries[number])
-                                .shadow(radius: 10)
+                            CapsuleImage(name: countries[number])
                         }
                     }
                 }
